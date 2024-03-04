@@ -1,5 +1,7 @@
+/* RESPONSIVITY? MOBILE VIEW IS IMPORTANT */
+/* COLOURS ARE TERRIBLE */
 nav {
-    background-color:#009688;
+    background-color: #009688;
     padding: 10px;
 }
 
@@ -38,6 +40,20 @@ nav {
 .menu a i {
     margin-right: 5px;
 }
+
+#intro {
+    font-size: 3.6rem;
+}
+
+.intro-text {
+    margin: 1rem 0;
+}
+
+.max-width {
+    max-width: 1200px;
+    margin: 1rem auto;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -49,7 +65,9 @@ body {
     color: #333;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: #0066cc;
     border-bottom: 2px solid #0066cc;
     padding-bottom: 5px;
@@ -62,7 +80,8 @@ p {
     margin-bottom: 10px;
 }
 
-ul, ol {
+ul,
+ol {
     margin-bottom: 15px;
 }
 
@@ -82,7 +101,8 @@ h1 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-h2, h3 {
+h2,
+h3 {
     color: #009688;
     margin-top: 0;
 }
@@ -116,7 +136,10 @@ a:hover {
     text-decoration: underline;
 }
 
-h3, ul, ol, p {
+h3,
+ul,
+ol,
+p {
     margin-left: 20px;
 }
 
@@ -125,13 +148,22 @@ h3, ul, ol, p {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
 
 
-h1, h2, h3, p, ul, ol, div, img, a {
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+div,
+img,
+a {
     animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -154,47 +186,55 @@ h1, h2, h3, p, ul, ol, div, img, a {
     background-color: #00796b;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
- input{
+
+input {
     display: none;
 }
-.container{
+
+.container {
     width: 100%;
     text-align: center;
 }
-h2{
+
+h2 {
     font-weight: normal;
     font-size: 35px;
     position: relative;
     margin: 40px 0;
 }
-h2::before{
+
+h2::before {
     content: '';
     position: absolute;
     width: 100px;
     height: 5px;
-    background-color:lightseagreen;
+    background-color: lightseagreen;
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     animation: animate 4s linear infinite;
 }
-@keyframes animate{
-    0%{
+
+@keyframes animate {
+    0% {
         width: 100px;
     }
-    50%{
+
+    50% {
         width: 200px;
     }
-    100%{
+
+    100% {
         width: 100px;
     }
 }
+
 .container {
     width: 90%;
     margin: auto;
@@ -251,28 +291,35 @@ label {
 label:hover {
     color: lightseagreen;
 }
-.photo-gallery{
+
+.photo-gallery {
     width: 90%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
 }
-.pic{
+
+.pic {
     position: relative;
     height: 230px;
     border-radius: 10px;
     box-shadow: 3px 3px 5px lightseagreen;
     cursor: pointer;
 }
-.pic img{
+
+.pic img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
     transition: .5s;
 
+    /* If you want the pictures to not be streched but take up all space use this: */
+    object-fit: cover;
+
 }
-.pic::before{
+
+.pic::before {
     content: attr(data-caption);
     position: absolute;
     top: 50%;
@@ -288,111 +335,120 @@ label:hover {
     transition-delay: .2s;
     z-index: 1;
 }
-.pic::after{
+
+.pic::after {
     content: "";
     position: absolute;
     width: 100%;
     bottom: 0;
     left: 0;
     border-radius: 10px;
-    height:0;
-    background-color: rgba(0,0,0,.4);
+    height: 0;
+    background-color: rgba(0, 0, 0, .4);
     transition: .3s;
 }
-.pic:hover::after{
+
+.pic:hover::after {
     height: 100%;
 }
-.pic:hover::before{
+
+.pic:hover::before {
     margin-top: 0;
     opacity: 1;
 }
-#check1:checked ~ .container .photo-gallery .pic {
+
+#check1:checked~.container .photo-gallery .pic {
     opacity: 1;
     transform: scale(1);
     position: relative;
     transition: .5s;
 }
-#check2:checked ~ .container .photo-gallery .training{
+
+#check2:checked~.container .photo-gallery .training {
     opacity: 1;
     transform: scale(1);
     position: relative;
-    
-}
-#check2:checked ~ .container .photo-gallery .clubvisits,
-#check2:checked ~ .container .photo-gallery .teamlunches,
-#check2:checked ~ .container .photo-gallery .matches,
-#check2:checked ~ .container .photo-gallery .sightseeing
-{
-    opacity: 0;
-    transform: scale(0);
-    position: absolute;
-    transition: .0s;  
+
 }
 
-#check3:checked ~ .container .photo-gallery .sightseeing{
-    opacity: 1;
-    transform: scale(1);
-    position: relative;
-    
-}
-#check3:checked ~ .container .photo-gallery .clubvisits,
-#check3:checked ~ .container .photo-gallery .teamlunches,
-#check3:checked ~ .container .photo-gallery .matches,
-#check3:checked ~ .container .photo-gallery .training
-{
+#check2:checked~.container .photo-gallery .clubvisits,
+#check2:checked~.container .photo-gallery .teamlunches,
+#check2:checked~.container .photo-gallery .matches,
+#check2:checked~.container .photo-gallery .sightseeing {
     opacity: 0;
     transform: scale(0);
     position: absolute;
-    transition: .0s;  
+    transition: .0s;
 }
-#check4:checked ~ .container .photo-gallery .matches{
+
+#check3:checked~.container .photo-gallery .sightseeing {
     opacity: 1;
     transform: scale(1);
     position: relative;
-    
+
 }
-#check4:checked ~ .container .photo-gallery .clubvisits,
-#check4:checked ~ .container .photo-gallery .teamlunches,
-#check4:checked ~ .container .photo-gallery .training,
-#check4:checked ~ .container .photo-gallery .sightseeing
-{
+
+#check3:checked~.container .photo-gallery .clubvisits,
+#check3:checked~.container .photo-gallery .teamlunches,
+#check3:checked~.container .photo-gallery .matches,
+#check3:checked~.container .photo-gallery .training {
     opacity: 0;
     transform: scale(0);
     position: absolute;
-    transition: .0s;  
+    transition: .0s;
 }
-#check5:checked ~ .container .photo-gallery .clubvisits{
+
+#check4:checked~.container .photo-gallery .matches {
     opacity: 1;
     transform: scale(1);
     position: relative;
-    
+
 }
-#check5:checked ~ .container .photo-gallery .matches,
-#check5:checked ~ .container .photo-gallery .teamlunches,
-#check5:checked ~ .container .photo-gallery .training,
-#check5:checked ~ .container .photo-gallery .sightseeing
-{
+
+#check4:checked~.container .photo-gallery .clubvisits,
+#check4:checked~.container .photo-gallery .teamlunches,
+#check4:checked~.container .photo-gallery .training,
+#check4:checked~.container .photo-gallery .sightseeing {
     opacity: 0;
     transform: scale(0);
     position: absolute;
-    transition: .0s;  
+    transition: .0s;
 }
-#check6:checked ~ .container .photo-gallery .teamlunches{
+
+#check5:checked~.container .photo-gallery .clubvisits {
     opacity: 1;
     transform: scale(1);
     position: relative;
-    
+
 }
-#check6:checked ~ .container .photo-gallery .clubvisits,
-#check6:checked ~ .container .photo-gallery .matches,
-#check6:checked ~ .container .photo-gallery .training,
-#check6:checked ~ .container .photo-gallery .sightseeing
-{
+
+#check5:checked~.container .photo-gallery .matches,
+#check5:checked~.container .photo-gallery .teamlunches,
+#check5:checked~.container .photo-gallery .training,
+#check5:checked~.container .photo-gallery .sightseeing {
     opacity: 0;
     transform: scale(0);
     position: absolute;
-    transition: .0s;  
+    transition: .0s;
 }
+
+#check6:checked~.container .photo-gallery .teamlunches {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+
+}
+
+#check6:checked~.container .photo-gallery .clubvisits,
+#check6:checked~.container .photo-gallery .matches,
+#check6:checked~.container .photo-gallery .training,
+#check6:checked~.container .photo-gallery .sightseeing {
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: .0s;
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -402,7 +458,17 @@ label:hover {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.9);
+    background: none;
+}
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .modal-content {
